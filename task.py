@@ -20,8 +20,8 @@ def get_revision_statistics(url, pageid):
     revisions = sorted(data['query']['pages'][pageid]['revisions'], key=get_date, reverse=True)
     groups = groupby(revisions, get_date)
     result = {}
-    for k, g in groups:
-        result[k] = list(g)
+    for i, g in groups:
+        result[i] = list(g)
     return result
 
 
